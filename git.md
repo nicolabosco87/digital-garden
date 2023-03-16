@@ -4,6 +4,13 @@
 https://dev.to/g_abud/advanced-git-reference-1o9j
 
 
+
+## Check if Pull Rebase
+Check for a possible pull --rebase for keeping the git history clean. 
+```
+git pull --rebase
+```
+
 ## Reset local branch to origin
 
 Discard local branch position and align it to origin.
