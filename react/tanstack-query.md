@@ -58,3 +58,28 @@ function Example() {
   )
 }
 ```
+
+
+## React-Query Tips
+
+### Trigger `useQuery` manually
+
+#### Method 1: refetch() "Preferred one"
+
+```typescript
+export const useComments = () => {
+const { data, refetch } = useQuery("comments", fetchComments, {
+  enabled: false
+});
+<button onClick={() => refetch()}>Some Button</button>
+```
+
+#### Method 2: Enabled boolean
+
+```typescript
+const [enabled, setEnabled] = useState(false);
+const { data } = useQuery("comments", fetchComments, {
+  enabled: enabled
+});
+<button onClick={() => setEnabled(true)}>Some Button</button>
+```
