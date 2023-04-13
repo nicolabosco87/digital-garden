@@ -15,3 +15,4 @@ Set `git.mergeEditor` to `true` for 3way merge mode.
 - [Todo+](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-todo-plus): manage todo lists with ease
 - [Turbo console log](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log): shortcut for adding `console.log`
 - [Template string converter](https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter): automatically convert to a template string when `${` is typed
+- [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable): add features for a better MD tables handling

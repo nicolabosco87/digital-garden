@@ -4,14 +4,26 @@
 https://dev.to/g_abud/advanced-git-reference-1o9j
 
 
+### Undo last commit (from HEAD)
 
-## Check if Pull Rebase
+Change the number for resetting more commits
+```
+git reset --soft HEAD~1
+```
+
+
+### Delete branch
+```
+git branch -D [BRANCH_NAME]
+```
+
+### Check if Pull Rebase
 Check for a possible pull --rebase for keeping the git history clean. 
 ```
 git pull --rebase
 ```
 
-## Reset local branch to origin
+### Reset local branch to origin
 
 Discard local branch position and align it to origin.
 
@@ -25,14 +37,16 @@ git fetch origin
 git reset --hard origin/feature/#01
 ```
 
-## Rebase onto
+### Rebase onto
+
+`Start point` should be the commit hash of the range start of commits to move/rebase.
 
 ```
 git rebase --onto [TARGET] [START_POINT]
 ```
 
 
-## Tags
+### Tags
 
 Push tags 
 ```

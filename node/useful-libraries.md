@@ -7,3 +7,5 @@
   "bar.foo": "baz" //map src.bar.foo to dest.baz
 }
 ```
+
+- [Volta](https://volta.sh/): automate Node version inside projects

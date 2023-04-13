@@ -39,6 +39,7 @@ const readOnlyTest = {
 
 readOnlyTest.a = "newValueA"; // Error: a property is readonly
 
+type readOnlyTestKeys = keyof typeof readOnlyTest;  
 ```
 
 
