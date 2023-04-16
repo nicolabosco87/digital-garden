@@ -2,7 +2,9 @@ import Head from 'next/head'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/doc'
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData }: {
+  allPostsData: any[]
+}) {
   return (
     <div>
       <Head>
