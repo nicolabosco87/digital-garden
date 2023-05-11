@@ -13,6 +13,17 @@ type ConvertPropertiesToString<T extends string> = {
 type NS = ConvertPropertiesToString<"a" | "b"> // ("a" | "b") is a subset (sottotipo) of string
 ```
 
+## Import only types 
+
+From https://www.typescriptlang.org/docs/handbook/modules.html#importing-types
+
+```ts
+// Explicitly use import type
+import type { APIResponseType } from "./api";
+// Explicitly pull out a value (getResponse) and a type (APIResponseType) 
+import { getResponse, type APIResponseType} from "./api";
+```
+
 ## Get keys of a Type
 
 ```typescript

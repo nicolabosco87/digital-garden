@@ -1,6 +1,26 @@
 # Vite
 
 
+## Generate type on lib build
+
+Can be done through `vite-plugin-dts`
+
+```ts
+import dts from "vite-plugin-dts";
+
+export default defineConfig({
+  build: {
+    lib: {
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "index",
+      fileName: "index",
+      formats: ["es"],
+    },
+  },
+  plugins: [dts()],
+});
+```
+
 ## Use absolute Aliases
 
 Method for adding aliases to 

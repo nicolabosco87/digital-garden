@@ -16,3 +16,6 @@ Set `git.mergeEditor` to `true` for 3way merge mode.
 - [Turbo console log](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log): shortcut for adding `console.log`
 - [Template string converter](https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter): automatically convert to a template string when `${` is typed
 - [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable): add features for a better MD tables handling
+- [Pretty TS Errors](https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors): Prettify VSCode standard TS error tooltip
+- [Select Compare Tabs](https://marketplace.visualstudio.com/items?itemName=outofsync42.select-compare-tabs): adds the compare options on tabs menu
+- [Restore Editors](https://marketplace.visualstudio.com/items?itemName=amodio.restore-editors): save current layout
