@@ -1,0 +1,53 @@
+
+
+.md-content {
+    h1 {
+        @apply font-semibold text-4xl mb-3 text-cyan-600
+    }
+    
+    h2 {
+        @apply font-semibold text-xl mb-3 text-cyan-600
+    }
+    
+    h3 {
+        @apply font-semibold text-lg mb-3 text-cyan-600
+    }
+
+    p {
+        @apply mb-3
+    }
+
+    a {
+        @apply text-cyan-600 hover:text-cyan-400
+    }
+
+    ul {
+        @apply  list-disc pl-5 mb-3
+    }
+    li {
+        @apply list-item
+    }
+
+    code {
+        @apply py-0 px-3 inline-block;
+
+        color: #ddd;
+        background: #303030;
+    }
+
+    table {
+        @apply border-collapse border border-slate-400;
+
+        td, th {
+            @apply p-2 border border-slate-300
+        }
+
+        th {
+            @apply bg-slate-100
+        }
+    }
+
+    pre {
+        @apply mb-3
+    }
+}

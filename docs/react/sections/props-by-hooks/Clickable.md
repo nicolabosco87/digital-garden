@@ -1,9 +1,10 @@
-import { omit } from 'lodash';
-import { forwardRef, ReactElement, useCallback } from 'react';
-import { Box, BoxProps } from 'theme-ui';
-import { isButton } from '../../../utils/reakit';
-import { useMergeRef } from '../../misc/useMergeRef';
-import { tabbableOptions, TabbableOptions, TabbableProps, useTabbable } from './Tabbable';
+```ts
+import { omit } from "lodash";
+import { forwardRef, ReactElement, useCallback } from "react";
+import { Box, BoxProps } from "theme-ui";
+import { isButton } from "../../../utils/reakit";
+import { useMergeRef } from "../../misc/useMergeRef";
+import { tabbableOptions, TabbableOptions, TabbableProps, useTabbable } from "./Tabbable";
 
 function isNativeClick(event: React.KeyboardEvent) {
   const element = event.currentTarget;
@@ -11,10 +12,10 @@ function isNativeClick(event: React.KeyboardEvent) {
   // istanbul ignore next: can't test trusted events yet
   return (
     isButton(element) ||
-    element.tagName === 'INPUT' ||
-    element.tagName === 'TEXTAREA' ||
-    element.tagName === 'A' ||
-    element.tagName === 'SELECT'
+    element.tagName === "INPUT" ||
+    element.tagName === "TEXTAREA" ||
+    element.tagName === "A" ||
+    element.tagName === "SELECT"
   );
 }
 
@@ -27,16 +28,11 @@ export const useClickable = (options: ClickableOptions): ClickableProps => {
 
   const onKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLElement>) => {
-      if (
-        options.disabled ||
-        event.defaultPrevented ||
-        event.metaKey ||
-        event.currentTarget !== event.target
-      ) {
+      if (options.disabled || event.defaultPrevented || event.metaKey || event.currentTarget !== event.target) {
         return;
       }
 
-      const isEnter = event.key === 'Enter';
+      const isEnter = event.key === "Enter";
 
       if (isEnter) {
         if (isNativeClick(event)) {
@@ -47,7 +43,7 @@ export const useClickable = (options: ClickableOptions): ClickableProps => {
         event.currentTarget.click();
       }
     },
-    [options.disabled],
+    [options.disabled]
   );
 
   const onKeyUp = useCallback(
@@ -56,18 +52,18 @@ export const useClickable = (options: ClickableOptions): ClickableProps => {
         return;
       }
 
-      const isSpace = event.key === ' ';
+      const isSpace = event.key === " ";
 
       if (isSpace) {
         event.currentTarget.click();
       }
     },
-    [options.disabled],
+    [options.disabled]
   );
 
   return {
     ...tabbableProps,
-    role: tabbableProps.ref.current && !isButton(tabbableProps.ref.current) ? 'button' : undefined,
+    role: tabbableProps.ref.current && !isButton(tabbableProps.ref.current) ? "button" : undefined,
     onKeyDown,
     onKeyUp,
   };
@@ -86,3 +82,4 @@ export const Clickable = forwardRef((props: ClickableOptions & BoxProps, ref): R
     </Box>
   );
 });
+```

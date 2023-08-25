@@ -1,17 +1,13 @@
-import { omit } from 'lodash';
-import { ReactElement, useCallback } from 'react';
-import { Box, BoxProps, Button } from 'theme-ui';
-import {
-  clickableOptions,
-  ClickableOptions,
-  ClickableProps,
-  useClickable,
-} from '../abstract/Clickable';
-import { DisclosureStateReturn, discosureStateProps } from './useDisclosureState';
+```ts
+import { omit } from "lodash";
+import { ReactElement, useCallback } from "react";
+import { Box, BoxProps, Button } from "theme-ui";
+import { clickableOptions, ClickableOptions, ClickableProps, useClickable } from "../abstract/Clickable";
+import { DisclosureStateReturn, discosureStateProps } from "./useDisclosureState";
 
 export type DisclosureOptions = ClickableOptions &
-  Pick<Partial<DisclosureStateReturn>, 'visible'> &
-  Pick<DisclosureStateReturn, 'toggle' | 'id'>;
+  Pick<Partial<DisclosureStateReturn>, "visible"> &
+  Pick<DisclosureStateReturn, "toggle" | "id">;
 
 export type DisclosureProps = ClickableProps;
 
@@ -24,13 +20,13 @@ export const useDisclosure = (options: DisclosureOptions): DisclosureProps => {
       if (event.defaultPrevented) return;
       toggle?.();
     },
-    [toggle],
+    [toggle]
   );
 
   return {
     ...clickableProps,
-    'aria-expanded': !!options.visible,
-    'aria-controls': options.id,
+    "aria-expanded": !!options.visible,
+    "aria-controls": options.id,
     onClick,
   };
 };
@@ -47,3 +43,4 @@ export function Disclosure(props: DisclosureOptions & BoxProps): ReactElement {
     </Box>
   );
 }
+```
