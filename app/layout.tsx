@@ -13,7 +13,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <title>Nicola Bosco's Digital Garden</title>
+        <title>Nicola Bosco&apos;s Digital Garden</title>
       </head>
       <body>
         <Header />
@@ -28,12 +28,3 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     </html>
   );
 }
-
-// export async function getStaticProps() {
-//   const menuStructure = getMenuStructure();
-//   return {
-//     props: {
-//       menuStructure,
-//     },
-//   };
-// }

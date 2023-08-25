@@ -26,7 +26,7 @@ export const Summary = ({ menuStructure }: ISummaryProps) => {
       <div className="">
         <Accordion type="single" collapsible className="w-full mb-3" defaultValue={defaultValue}>
           {Object.keys(dir.dirs).map((key) => (
-            <AccordionItem value={key}>
+            <AccordionItem value={key} key={key}>
               <AccordionTrigger className="px-0 py-3">{key}</AccordionTrigger>
               <AccordionContent className="">
                 <div className="pl-3 border-cyan-400">{printListGroup(dir.dirs[key], `${path}/${key}`)}</div>
