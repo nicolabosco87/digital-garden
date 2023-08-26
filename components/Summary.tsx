@@ -36,7 +36,9 @@ export const Summary = ({ menuStructure }: ISummaryProps) => {
         </Accordion>
         {dir.files.map((f) => (
           <div key={f.id}>
-            <Anchor href={`/doc/${path ? path + "/" : ""}${f.id}`}>{capitalize(f.title)}</Anchor>
+            <Anchor className="block hover:bg-cyan-100" href={`/doc/${path ? path + "/" : ""}${f.id}`}>
+              {capitalize(f.title)}
+            </Anchor>
           </div>
         ))}
       </div>

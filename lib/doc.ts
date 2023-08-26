@@ -5,10 +5,9 @@ import matter from "gray-matter";
 import path from "path";
 import { cache } from "react";
 import { remark } from "remark";
-import html from "remark-html";
+import html, { Root } from "remark-html";
 import { DirResult } from "../types/doc.types";
-import codeExtra from "remark-code-extra";
-import { unified } from "unified";
+import { Preset, unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
@@ -16,7 +15,6 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRewrite from "rehype-rewrite";
 
-// const postsDirectory = "../../docs/"
 const postsDirectory = path.join(process.cwd(), "./docs/");
 
 const cleanFilename = (filename: string) => filename.replace(/\.md$/, "");
@@ -134,18 +132,18 @@ export async function getPostData(id: string[]) {
 
   // using unified for Markdown to Html
   const result = unified()
-    .use(remarkParse)
-    .use(remarkGfm) // Support GFM (tables, autolinks, tasklists, strikethrough).
-    .use(remarkRehype)
-    .use(rehypeRewrite, {
-      rewrite: (node) => {
+    .use(remarkParse as Preset)
+    .use(remarkGfm as Preset) // Support GFM (tables, autolinks, tasklists, strikethrough).
+    .use(remarkRehype as Preset)
+    .use(rehypeRewrite as any, {
+      rewrite: (node: any) => {
         if (node.type == "element" && node.tagName == "a") {
           node.properties = { ...node.properties, target: "_blank" };
         }
       },
     })
-    .use(rehypeHighlight) // Enable Highlight.js for code highlight
-    .use(rehypeStringify)
+    .use(rehypeHighlight as Preset) // Enable Highlight.js for code highlight
+    .use(rehypeStringify as Preset)
     .processSync(matterResult.content);
 
   // Combine the data with the id
