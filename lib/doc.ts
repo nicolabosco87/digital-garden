@@ -4,8 +4,6 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import { cache } from "react";
-import { remark } from "remark";
-import html, { Root } from "remark-html";
 import { DirResult } from "../types/doc.types";
 import { Preset, unified } from "unified";
 import remarkParse from "remark-parse";
@@ -80,19 +78,6 @@ const getDocStructureToIds = (
 
 export async function getMenuStructure() {
   return await getDocsStructure(postsDirectory);
-
-  // // Get file names under /posts
-  // const structure = await getDocsStructure(postsDirectory);
-  // const structureIDs = getDocStructureToIds(structure);
-
-  // // Sort posts by date
-  // return structureIDs.sort((a, b) => {
-  //   if (a.id < b.id) {
-  //     return 1;
-  //   } else {
-  //     return -1;
-  //   }
-  // });
 }
 
 export async function getAllPostIds() {

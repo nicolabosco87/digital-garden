@@ -212,3 +212,54 @@ open?.({
   type: "error",
 });
 ```
+
+## Handling types union errors
+
+```ts
+type Mail = {
+  message: string;
+};
+
+type Phone = {
+  text: string;
+};
+
+// trying to access the message property
+const info = (obj: Mail | Phone): string => {
+  // Property 'message' does not exist on type 'Mail | Phone'.
+  if (obj.message) {
+    return obj.message;
+  }
+
+  // Correct
+  if ("message" in obj) {
+    return obj.message;
+  }
+
+  return obj.text;
+};
+```
+
+## Better error handling
+
+Javascript can throw any error. So catch Error can't be typed.
+
+From: https://www.youtube.com/live/9VzdTwPC-Rs?si=peg4_vMylpCbiUcl&t=7686
+
+```ts
+try {
+  // Code
+} catch (e: unknown) {
+  let message = "Error ";
+
+  if (e instanceOf SyntaxError) {
+    message += e.message;
+  }
+
+  throw Error(message);
+}
+
+// Activate useUnknownInCatchVariables in tsconfig.json
+```
+
+![Alt text](image.png)

@@ -1,15 +1,11 @@
 "use client";
-import { Navbar } from "flowbite-react";
 import React from "react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
 
 export const Header = () => {
   return (
-    <Navbar className="bg-gradient-to-b from-cyan-600 to-cyan-500 mb-6">
-      <Navbar.Brand href="/">
-        <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white mb-3 mt-2 text-white">
-          Nicola Bosco&apos;s Digital Garden
-        </span>
-      </Navbar.Brand>
+    <Navbar position="sticky" maxWidth="full">
+      <NavbarBrand>Nicola Bosco&apos;s Digital Garden</NavbarBrand>
     </Navbar>
   );
 };

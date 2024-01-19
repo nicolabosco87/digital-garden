@@ -3,11 +3,12 @@
 ## Useful configurations
 
 Set `git.mergeEditor` to `true` for 3way merge mode.
+Set `typescript.preferences.importModuleSpecifier` form JS/TS module import method.
 
 ## Useful Extensions
 
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments): style and categorize comments in your code
-- [colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize): Instantly visualize css colors 
+- [colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize): Instantly visualize css colors
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph): enhanced git graph view
 - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally): tool for i18n translations handling
 - [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow): colorize indention in front of your text

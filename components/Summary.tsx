@@ -1,5 +1,4 @@
 "use client";
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../src/components/ui/accordion";
 import { DirResult } from "../types/doc.types";
 import { Anchor } from "./Anchor";

@@ -69,6 +69,16 @@ git reset --soft HEAD~1
 git branch -D [BRANCH_NAME]
 ```
 
+#### Delete merged branches
+
+```sh
+# List them
+git branch --merged develop | grep "feature/"
+
+# Delete them
+git branch --merged develop | grep "feature/" | xargs -n 1 -r git branch -d
+```
+
 ### Check if Pull Rebase
 
 Check for a possible pull --rebase for keeping the git history clean.
