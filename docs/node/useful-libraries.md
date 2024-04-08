@@ -12,3 +12,5 @@
 - [Volta](https://volta.sh/): automate Node version inside projects
 
 - [Default Composer](https://github.com/aralroca/default-composer/): helps set defaults on object without spread operator
+
+- [npm-check-updates](https://www.npmjs.com/package/npm-check-updates): tool for a better update experience. use with -i for the interactive view
