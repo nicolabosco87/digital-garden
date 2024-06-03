@@ -1,8 +1,6 @@
 # Tanstack Query
 
-
-[Tanstack query](https://tanstack.com/query/latest) is an utility capable to handle async data, can be used apart from *global states* for a complete data fetching, caching and updating.
-
+[Tanstack query](https://tanstack.com/query/latest) is an utility capable to handle async data, can be used apart from _global states_ for a complete data fetching, caching and updating.
 
 ## Init
 
@@ -27,7 +25,7 @@ export default function App() {
 
 ## Queries
 
-Data fetching will be done through `Queries` and .  
+Data fetching will be done through `Queries` and .
 
 ```
 import {
@@ -59,6 +57,37 @@ function Example() {
 }
 ```
 
+## Lazy Query example
+
+Example for implementing a LazyQuery hook.
+
+```ts
+export const useLazyQuery = () => {
+  const queryClient = useQueryClient();
+
+  const status = queryClient.getQueryState(["QueryKey"]);
+
+  const fetch = useCallback(
+    (payload: Object) =>
+      queryClient.fetchQuery({
+        queryKey: ["QueryKey"],
+        queryFn: () =>
+          api.doApiCall({
+            payload,
+          }),
+      }),
+    [api, queryClient]
+  );
+
+  return useMemo(
+    () => ({
+      status,
+      fetch,
+    }),
+    [fetch, status]
+  );
+};
+```
 
 ## React-Query Tips
 
@@ -79,7 +108,7 @@ const { data, refetch } = useQuery("comments", fetchComments, {
 ```typescript
 const [enabled, setEnabled] = useState(false);
 const { data } = useQuery("comments", fetchComments, {
-  enabled: enabled
+  enabled: enabled,
 });
-<button onClick={() => setEnabled(true)}>Some Button</button>
+<button onClick={() => setEnabled(true)}>Some Button</button>;
 ```
