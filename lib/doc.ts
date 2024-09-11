@@ -17,7 +17,7 @@ const postsDirectory = path.join(process.cwd(), "./docs/");
 
 const cleanFilename = (filename: string) => filename.replace(/\.md$/, "");
 
-export const getDocsStructure = cache(async (dirPath: string) => {
+export const getDocsStructure = async (dirPath: string) => {
   const result: DirResult = { dirs: {}, files: [] };
 
   const files = fs.readdirSync(dirPath).sort((a, b) => (a > b ? 1 : -1));
@@ -42,7 +42,7 @@ export const getDocsStructure = cache(async (dirPath: string) => {
   });
 
   return result;
-});
+};
 
 const getDocStructureToIds = (
   structure: DirResult,

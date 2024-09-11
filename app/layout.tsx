@@ -1,12 +1,10 @@
-import { Footer, Navbar } from "flowbite-react";
-import { getMenuStructure } from "../lib/doc";
-import { MenuStructure } from "../types/doc.types";
 import { ReactNode } from "react";
-import { Summary } from "../components/Summary";
-import "./globals.css";
 import { AppFooter } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Providers } from "../components/Providers";
+import { Summary } from "../components/Summary";
+import { getMenuStructure } from "../lib/doc";
+import "./globals.css";
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const menuStructure = await getMenuStructure();
