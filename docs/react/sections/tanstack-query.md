@@ -59,6 +59,8 @@ function Example() {
 
 ## Lazy Query example
 
+Can be used this one: https://gist.github.com/itimoshenko/43e4f2fadba74c8d48ffa36f00dfdf67/
+
 Example for implementing a LazyQuery hook.
 
 ```ts

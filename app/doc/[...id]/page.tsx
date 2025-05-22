@@ -8,7 +8,6 @@ export default async function Doc({ params: { id } }: { params: { id: string[] }
 
   return (
     <div className="page__content">
-      {/* <Title>{postData.title}</Title> */}
       <MdContent html={postData.contentHtml ?? ""} />
     </div>
   );
